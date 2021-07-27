@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rango import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('',views.index, name = 'index'),
@@ -23,4 +25,4 @@ urlpatterns = [
 
     # The above maps any URLs starting with rango/ to be handled by rango
     path('rango/',include('rango.urls')), # go to rango/urls.py to match the remaining URL
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

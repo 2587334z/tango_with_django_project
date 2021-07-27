@@ -3,7 +3,12 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Rango says hey there partner!" + "<a href='/rango/about/'>About</a>")
+    # build a dictionary to pass to the template engine as its context.
+    # the key boldmessage to match the {{ boldmessage}} variable in template/rango/index.html
+    context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!'}
+    
+    # return a rendered responsed to the client
+    return render(request, 'rango/index.html', context_dict)
 
 def about(request):
-    return HttpResponse("Rango says here is the about page." + "<a href='/rango/'>Index</a>")
+    return render(request, 'rango/about.html')
