@@ -6,7 +6,7 @@ from django.template.defaultfilters import slugify
 
 class Category(models.Model):
     # Define attributes
-    name_max_length = 128;
+    name_max_length = 128
     name = models.CharField(max_length=name_max_length, unique=True) # the value must be unique
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)

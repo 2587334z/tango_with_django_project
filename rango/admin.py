@@ -1,5 +1,5 @@
 from django.contrib import admin
-from rango.models import Category, Page
+from .models import Category, Page
 
 
 # Create a new class to custom the Page

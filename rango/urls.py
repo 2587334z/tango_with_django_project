@@ -1,7 +1,8 @@
 # Handle the remaining sub URL string
 
 from django.urls import path
-from rango import views
+from . import views
+from django.conf.urls import url
 
 app_name = 'rango'
 
