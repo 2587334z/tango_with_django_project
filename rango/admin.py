@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Page
+from .models import Category, Page,UserProfile
 
 
 # Create a new class to custom the Page
@@ -14,5 +14,6 @@ class CategoryAdmin(admin.ModelAdmin):
 # Register the models here.
 admin.site.register(Category,CategoryAdmin)
 admin.site.register(Page, pageAdmin)
+admin.site.register(UserProfile)
 
 
